@@ -31,19 +31,6 @@ Server/       Express server: server.js (routes) + supabase.js (server-side Supa
 
 The server (`Server/server.js`) serves everything in `Frontend/` as static
 files and exposes the API routes under `/api/*`.
-
-## Notes on this conversion
-
-- The original project included an unused React/TypeScript/Vite scaffold
-  (`src/App.tsx`, `main.tsx`, `vite.config.ts`, `tsconfig.json`) left over
-  from the app's starter template. It rendered an empty `<div></div>` and
-  was never wired into the real app, so it's been removed — the actual
-  portal was already plain JavaScript.
-- `supabase.js` imports the `@supabase/supabase-js` package by name; since
-  there's no bundler anymore, `Frontend/index.html` and `Backend/index.html`
-  now include a browser **import map** pointing that package name at a CDN
-  build, so the existing code works unchanged.
-- `Server/server.js` now explicitly loads `.env` on startup
   (`import 'dotenv/config'`) — previously nothing in the project actually
   called `dotenv`, so environment variables only loaded because the old dev
   tooling (Vite/Bun) did it automatically behind the scenes.
