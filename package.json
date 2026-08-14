@@ -1,0 +1,16 @@
+{
+  "name": "sau-student-portal",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sandlip Africa University Student Portal — plain HTML, CSS, JavaScript frontend with an Express/Supabase server.",
+  "scripts": {
+    "start": "node Server/server.js",
+    "dev": "node Server/server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.3",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2"
+  }
+}
